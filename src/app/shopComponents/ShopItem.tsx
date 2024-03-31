@@ -2,6 +2,7 @@
 import React from 'react'
 
 import { Button } from "@/components/ui/button";
+
 import {
   Card,
   CardContent,
@@ -33,7 +34,7 @@ const ShopItem = (props: ShopItemProps) => {
         <p>rating: {props.rating}</p>
         <p>brand: {props.brand}</p>
       </CardContent>
-        <Button onClick={handleAddToCart}> Add To Cart </Button>
+      <Button onClick={handleAddToCart}> Add To Cart </Button>
     </Card>
   );
 }
