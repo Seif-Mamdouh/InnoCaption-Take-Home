@@ -24,6 +24,37 @@ const useShoppingCart = () => {
       );
   }, []);
 
+
+  const removeFromCart = (itemToRemove) => {
+    console.log("removeFromCart", itemToRemove)
+    const newCart = state.cart.filter((item) => item.id !== itemToRemove.id);
+    return setState((prevState) => ({
+      ...prevState,
+      cart: newCart,
+      totalCartValue: newCart.reduce((total, item) => total + item.totalPrice, 0),
+    }));
+  };
+
+  const editCart = (itemToEdit) => {
+    //I want to edit the quantity of the item in the cart
+    const existingCartItemIndex = state.cart.findIndex(
+      (item) => item.id === itemToEdit.id
+    );
+    const updatedCart = [...state.cart];
+    updatedCart[existingCartItemIndex].quantity = itemToEdit.quantity;
+    updatedCart[existingCartItemIndex].totalPrice =
+      itemToEdit.quantity * itemToEdit.price;
+    const totalCartValue = updatedCart.reduce(
+      (total, item) => total + item.totalPrice,
+      0
+    );
+    setState((prevState) => ({
+      ...prevState,
+      cart: updatedCart,
+      totalCartValue: totalCartValue,
+    }));
+  }
+
   const handleFilter = (category) => {
     setState((prevState) => {
       if (prevState.filter.includes(category)) {
@@ -76,6 +107,7 @@ const useShoppingCart = () => {
     }
   };
 
+
 const handleSearch = (searchTerm) => {
   setState((prevState) => ({
     ...prevState,
@@ -86,13 +118,15 @@ const handleSearch = (searchTerm) => {
   }));
 };
 
-
   return {
     state,
     handleFilter,
     addToCart,
     handleSearch,
+    removeFromCart,
+    editCart,
   };
+
 };
 
 export default useShoppingCart;

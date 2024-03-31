@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input";
 
 const Shop = () => {
 
-    const { state, handleFilter, addToCart, handleSearch } = useShoppingCart();
+    const { state, handleFilter, addToCart, handleSearch, removeFromCart, editCart } = useShoppingCart();
     const { data, error, filter, cart, totalCartValue, search } = state;
 
     if (error) {
@@ -21,6 +21,7 @@ const Shop = () => {
     if (data.length === 0) {
       return <div>Loading...</div>;
     }
+
 
 
   return (
@@ -59,7 +60,7 @@ const Shop = () => {
             ))}
       </div>
       <div className="cart-container">
-        <Cart cart={cart} totalCartValue={totalCartValue} />
+        <Cart cart={cart} totalCartValue={totalCartValue} remove={removeFromCart} edit={editCart} />
       </div>
     </div>
   );
