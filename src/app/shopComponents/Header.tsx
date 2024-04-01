@@ -1,10 +1,12 @@
 "use client";
 import React from "react";
 
+import "../styles/styles.css";
+
 const Home = () => {
   return (
-    <div>
-      <div>Shopping Center</div>
+    <div className = "Header">
+      <h2>Shopping Center</h2>
     </div>
   );
 };
