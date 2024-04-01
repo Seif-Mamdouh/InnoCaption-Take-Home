@@ -89,12 +89,16 @@
 
 
 .cart-container {
-    margin: 30px;
-    width: 17%; 
-    /* height: 20vh;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1); */
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  margin-right: 10px;
+  width: 17%; 
+  height: 60vh;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
 }
 
 .cart-container h2, ul, li, h4, h6{
