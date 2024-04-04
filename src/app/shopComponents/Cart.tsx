@@ -10,9 +10,8 @@ interface CartProps {
 }
 
 const Cart = (props: CartProps) => {
-
-    const [editedQuantity, setEditedQuantity] = React.useState("");
-
+  
+  const [editedQuantity, setEditedQuantity] = React.useState("");
 
   const handleRemove = (itemToRemove) => {
     props.remove(itemToRemove);
@@ -32,30 +31,34 @@ const Cart = (props: CartProps) => {
     const editedItem = { ...itemToEdit, quantity: newQuantity };
     props.edit(editedItem);
     
-        setEditedQuantity("");
+    setEditedQuantity("");
   }
 
   return (
     <div className="cart">
-      <h3>Cart</h3>
+      <h2>Cart</h2>
       <ul>
         {props.cart.map((item: any) => (
           <li key={item.id}>
             <h6>{item.title}</h6>
             <h6>Quantity: {item.quantity}</h6>
             <h6>Price: ${item.totalPrice}</h6>
-            <Button onClick={() => handleRemove(item)}>Remove</Button>
             <input
               type="number"
               value={editedQuantity}
               onChange={(e) => setEditedQuantity(e.target.value)}
               placeholder="New Quantity"
             />
-            <Button onClick={() => handleEdit(item)}>Edit</Button>
+            <Button className="cart-button" onClick={() => handleEdit(item)}>
+              Edit
+            </Button>
+            <Button className="cart-button" onClick={() => handleRemove(item)}>
+              Remove
+            </Button>
           </li>
         ))}
       </ul>
-      <h6>Total: ${props.totalCartValue}</h6>
+      <h4>Total: ${props.totalCartValue}</h4>
     </div>
   );
 }
