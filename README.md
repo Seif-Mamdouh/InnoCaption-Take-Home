@@ -7,6 +7,10 @@ npm run dev
 
 Deployed link: https://inno-caption-take-home-4.vercel.app/
 
+<img width="1396" alt="Screenshot 2024-04-04 at 2 44 07 PM" src="https://github.com/Seif-Mamdouh/InnoCaption-Take-Home/assets/55955558/187798f1-82b7-4e48-93bc-b0673ec0492f">
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
