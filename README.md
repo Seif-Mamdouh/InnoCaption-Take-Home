@@ -1,4 +1,9 @@
+Clone the project and run
 
+```bash
+npm i 
+npm run dev
+```
 
 Deployed link: https://inno-caption-take-home-4.vercel.app/
 
