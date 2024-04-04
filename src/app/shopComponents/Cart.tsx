@@ -43,9 +43,6 @@ const Cart = (props: CartProps) => {
             <h6>{item.title}</h6>
             <h6>Quantity: {item.quantity}</h6>
             <h6>Price: ${item.totalPrice}</h6>
-            <Button className="cart-button" onClick={() => handleRemove(item)}>
-              Remove
-            </Button>
             <input
               type="number"
               value={editedQuantity}
@@ -54,6 +51,9 @@ const Cart = (props: CartProps) => {
             />
             <Button className="cart-button" onClick={() => handleEdit(item)}>
               Edit
+            </Button>
+            <Button className="cart-button" onClick={() => handleRemove(item)}>
+              Remove
             </Button>
           </li>
         ))}
